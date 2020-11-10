@@ -1,0 +1,119 @@
+div#chat {
+  width: 30vw;
+  height: 80vh;
+  max-height: 80vh;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 2rem;
+  background-color: #222222;
+}
+
+div.chatTop {
+  height: 5vh;
+  line-height: 5vh;
+  background-color: #111111;
+  color: #ffffff;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+div#chatBanner {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+div.chatInput {
+  height: 30vh;
+  line-height: 1.4;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+#chatInput {
+  resize: none;
+  border: none;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 1rem;
+  font-size: 1.4rem;
+  height: 30vh;
+  max-height: 30vh;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+#chatSend {
+  border: none;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+#chatSend:hover {
+  background-color: #444444;
+}
+
+#chatCollapsible {
+  width: 5vh;
+  height: 5vh;
+  text-align: center;
+  line-height: 5vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 2rem;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.chatBody {
+  min-height: 45vh;
+  max-width: 30vw;
+  max-height: 45vh;
+  overflow-y: auto;
+  padding: 0 1rem;
+  padding-top: 1rem;
+}
+
+.messageBlob,
+.messageBlobSelf {
+  max-width: 25vw;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  padding: 1rem;
+  background-color: #555555;
+  color: #ffffff;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+}
+
+.messageBlobSelf {
+  background-color: #006aff;
+  float: right;
+  clear: both;
+}
+
+#inputControls {
+  width: 100%;
+  background-color: #444444;
+}
+
+.controlElement {
+  text-align: center;
+  width: 5vh;
+  height: 4vh;
+  line-height: 4vh;
+  background-color: #444444;
+  display: block;
+}
+
+.controlElement:hover {
+  background-color: #555555;
+}

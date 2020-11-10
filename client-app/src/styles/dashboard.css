@@ -1,0 +1,10 @@
+﻿
+.image {
+    height:100px;
+    width: 100px;
+}
+
+#iamgeT {
+    max-height: 100px;
+    min-width: 100px;
+}

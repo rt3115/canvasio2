@@ -18,18 +18,18 @@ export const NavMenu = ( {children } ) => {
                 <AppBar position="static">
                     <Tabs>
                         <Tab icon={<PersonPinIcon/>} />
-                        <Tab label="New Canvas" href="/Drawing" />
-                        <Tab label="New Party" href="/Party" />
+                        <Tab label="New Canvas" href="#/Drawing" />
+                        <Tab label="New Party" href="#/Party" />
                     </Tabs>
                 </AppBar>
                 <AppBar position="static" id="LowerAppBar">
                     <Tabs centered>
-                        <Tab label="Home" href="/" />
-                        <Tab label="Discover" href="/Discover" />
-                        <Tab label="Dashboard" href="/#Dashboard" />
-                        <Tab label="party" href="/Party" />
-                        <Tab label="Drawing" href="/Drawing" />
-                        <Tab label="Profile" href="/ProfileSettings" />
+                        <Tab label="Home" href="#/" />
+                        <Tab label="Discover" href="#/Discover" />
+                        <Tab label="Dashboard" href="#/Dashboard" />
+                        <Tab label="party" href="#/Party" />
+                        <Tab label="Drawing" href="#/Drawing" />
+                        <Tab label="Profile" href="#/ProfileSettings" />
                     </Tabs>
                 </AppBar>
             </div>

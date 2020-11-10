@@ -1,0 +1,29 @@
+.sections {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+.column {
+  margin: 1rem;
+}
+
+.partyname {
+  height: 10vh;
+  background-color: #444444;
+  text-align: center;
+  line-height: 10vh;
+  color: #ffffff;
+}
+
+.column:nth-child(even),
+.column:last-child {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 2rem;
+}
+
+.canvasImage,
+.videoImage {
+  height: 40vh;
+  background-color: #444444;
+}
