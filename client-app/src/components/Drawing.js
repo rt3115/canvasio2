@@ -63,7 +63,6 @@ export const Drawing = ( { children }) => {
 
         return (
             <section style={sectionStyle}>
-            <body>
                 
                 <script type="text/javascript" src="./js/canvas.js"></script>
 
@@ -88,7 +87,7 @@ export const Drawing = ( { children }) => {
                                 <option value="rect">Rectangle</option>
                             </select>
                         </p>
-                        <div class="btn-group">
+                        <div className="btn-group">
                             <Button className="w3-button w3-white w3-border" id="paint_button">Paint</Button>
                             <Button className="w3-button w3-white w3-border" id="eraser_button">Eraser</Button>
                             <Button className="w3-button w3-white w3-border" id="line_button">Line</Button>
@@ -96,7 +95,7 @@ export const Drawing = ( { children }) => {
                             <Button className="w3-button w3-white w3-border" id="increase_width_button">+</Button>
                             <Button className="w3-button w3-white w3-border" id="decrease_width_button">-</Button>
                             <div>
-                                <label for="colorPick"> Color Picker </label>
+                                <label htmlFor="colorPick"> Color Picker </label>
                                 <input type="color" id="colorPicker" />
                             </div>
                         </div>
@@ -110,8 +109,8 @@ export const Drawing = ( { children }) => {
 
                             <div id="canvasPlaceHolder">                                
                                 <div id="canvasHolder">
-                                       <canvas id="drawingCanvas" height="800" width="1020" class="w3-border">
-                                          <p class="noscript">We're sorry, this web application is currently not supported with your browser. Please use an alternate browser or download a supported <br />browser. Supported browsers: <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, <br />and <a href="http://www.konqueror.org">Konqueror</a>. Also make sure your JavaScript is enabled.</p>
+                                       <canvas id="drawingCanvas" height="800" width="1020" className="w3-border">
+                                          <p className="noscript">We're sorry, this web application is currently not supported with your browser. Please use an alternate browser or download a supported <br />browser. Supported browsers: <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, <br />and <a href="http://www.konqueror.org">Konqueror</a>. Also make sure your JavaScript is enabled.</p>
                                        </canvas>
                                 </div>
                             </div>
@@ -120,7 +119,6 @@ export const Drawing = ( { children }) => {
                     </Grid>
                 </Grid>
 
-            </body>
              </section >
             );
 

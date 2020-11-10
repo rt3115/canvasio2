@@ -13,6 +13,12 @@ import PersonPinIcon from '@material-ui/icons/PersonPin';
 import '../styles/NavMenu.css';
 
 export const NavMenu = ( {children } ) => {
+      const [value,  setValue] = React.useState(2);
+
+      const handleChange = (event, newValue) => {
+        setValue(newValue);
+      }
+
         return (
             <div>
                 <AppBar position="static">
@@ -23,7 +29,7 @@ export const NavMenu = ( {children } ) => {
                     </Tabs>
                 </AppBar>
                 <AppBar position="static" id="LowerAppBar">
-                    <Tabs centered>
+                    <Tabs centered value={value} onChange={handleChange}>
                         <Tab label="Home" href="#/" />
                         <Tab label="Discover" href="#/Discover" />
                         <Tab label="Dashboard" href="#/Dashboard" />
