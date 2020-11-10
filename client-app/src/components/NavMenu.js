@@ -26,7 +26,7 @@ export const NavMenu = ( {children } ) => {
                     <Tabs centered>
                         <Tab label="Home" href="/" />
                         <Tab label="Discover" href="/Discover" />
-                        <Tab label="Dashboard" href="/Dashboard" />
+                        <Tab label="Dashboard" href="/#Dashboard" />
                         <Tab label="party" href="/Party" />
                         <Tab label="Drawing" href="/Drawing" />
                         <Tab label="Profile" href="/ProfileSettings" />

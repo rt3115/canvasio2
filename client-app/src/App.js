@@ -3,6 +3,7 @@ import './App.css';
 import { Layout } from './components/Layout';
 import { Route, Switch , HashRouter} from 'react-router-dom';
 import { Home } from './components/Home';
+import { DashBoard } from './components/Dashboard';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Layout>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/Dashboard' component={DashBoard} />
         </Switch>
         <div className="App">
           <header className="App-header">
