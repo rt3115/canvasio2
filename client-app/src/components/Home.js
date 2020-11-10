@@ -21,10 +21,10 @@ export const Home = ( { children } ) => {
             </head>
             <body>
                 <h1>Canvas.io</h1>
-                <Button type="submit" href="/register">
+                <Button type="submit" href="#/register">
                     REGISTER
                 </Button>
-                <Button type="submit" href="/login">
+                <Button type="submit" href="#/login">
                     LOGIN
                 </Button>
             </body>

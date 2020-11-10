@@ -26,14 +26,14 @@ function getURLParameter(param) {
 }
 
 if (username != null && userLabel!=null) {
-    userLabel.textContent = username
+    userLabel.textContent = username;
 }
 if (pass != null && passLabel != null) {
-    passLabel.textContent = pass
+    passLabel.textContent = pass;
 }
 if (email != null && emailLabel != null) {
-    emailLabel.textContent = email
+    emailLabel.textContent = email;
 }
 if (birthday != null && dateLabel != null) {
-    dateLabel.textContent = birthday
+    dateLabel.textContent = birthday;
 }

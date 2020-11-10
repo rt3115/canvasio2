@@ -20,11 +20,11 @@ export const Register = () => {
                     <body>
                         <h1>Register</h1>
                         <form method="GET" action="ProfileSettings.html" onsubmit="return checkFields();">
-                            <div class="container">
+                            <div className="container">
                                 <p>Enter your information below</p>
 
 
-                                <label for="username"><b>Username</b></label>
+                                <label htmlFor="username"><b>Username</b></label>
                                 <input type="text"
                                     placeholder="Username"
                                     name="username"
@@ -32,7 +32,7 @@ export const Register = () => {
                                     required />
                                 <hr />
 
-                                <label for="email"><b>Email</b></label>
+                                <label htmlFor="email"><b>Email</b></label>
                                 <input type="email"
                                     placeholder="Email"
                                     name="email"
@@ -41,7 +41,7 @@ export const Register = () => {
                                 <hr />
 
 
-                                <label for="date"><b>Date of Birth</b></label>
+                                <label htmlFor="date"><b>Date of Birth</b></label>
                                 <input type="date" placeholder="Date" name="date" id="date" required />
                                 <hr />
 
@@ -54,7 +54,7 @@ export const Register = () => {
                                     required />
                                 <hr />
 
-                                <button type="submit" class="registerbtn">Register</button>
+                                <button type="submit" className="registerbtn">Register</button>
                             </div>
                         </form>
                     </body>
