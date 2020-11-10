@@ -7,10 +7,10 @@ const canvases = [
   { name: 'unapologeticplatypus' },
   { name: 'relentlessgator' },
   { name: 'lazysloth' },
-  { name: 'unapologeticplatypus' },
+  { name: 'unapologeticplatypus' }
 ];
 
-export const Party = (props) => {
+export const Party = ( {props} ) => {
   return (
     <div>
       <div className='sections'>
