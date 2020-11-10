@@ -14,7 +14,7 @@ function getURLParameter(param) {
     var URLVariables = pageURL.split('&');
     for (var i = 0; i < URLVariables.length; i++) {
         var parameterName = URLVariables[i].split('=');
-        if (parameterName[0] == param) {
+        if (parameterName[0] === param) {
             if (decodeURIComponent(parameterName[1]) == null) {
                 return parameterName[1]
             } else {
@@ -27,6 +27,7 @@ function getURLParameter(param) {
 
 if (username != null && userLabel!=null) {
     userLabel.textContent = username
+    alert();
 }
 if (pass != null && passLabel != null) {
     passLabel.textContent = pass
