@@ -1,12 +1,12 @@
 ﻿var username = getURLParameter('username');
-var pass = getURLParameter('password');
+var pass = getURLParameter('pass');
 var email = getURLParameter('email');
-var birthday = getURLParameter('birthdate');
+var birthday = getURLParameter('date');
 
 var emailLabel = document.getElementById("email");
 var userLabel = document.getElementById("username");
-var passLabel = document.getElementById("pass");
-var dateLabel = document.getElementById("date");
+var passLabel = document.getElementById("password");
+var dateLabel = document.getElementById("birthday");
 
 
 function getURLParameter(param) {
@@ -26,14 +26,14 @@ function getURLParameter(param) {
 }
 
 if (username != null && userLabel!=null) {
-    userLabel.textContent = username;
+    userLabel.textContent = username
 }
 if (pass != null && passLabel != null) {
-    passLabel.textContent = pass;
+    passLabel.textContent = pass
 }
 if (email != null && emailLabel != null) {
-    emailLabel.textContent = email;
+    emailLabel.textContent = email
 }
 if (birthday != null && dateLabel != null) {
-    dateLabel.textContent = birthday;
+    dateLabel.textContent = birthday
 }
