@@ -330,12 +330,12 @@
                         y = Math.min(ev._y, tool.y0),
                         w = Math.abs(ev._x - tool.x0),
                         h = Math.abs(ev._y - tool.y0);
-                    context.rect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
+                    //context.strokeRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
 
                     if (!w || !h) {
                         return;
                     }
-                    context.strokeRect(x, y, w, h);
+                    context.fillRect(x, y, w, h);
                 };
                 // Now when you select the rectangle tool, you can draw rectangles. 
                 this.mouseup = function (ev) {
