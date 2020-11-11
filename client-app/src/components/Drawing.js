@@ -145,7 +145,7 @@ export const Drawing = ({ children }) => {
                             onClose={handleMenuClose}
                         >
                             <MenuItem>
-                                <Button onClick={handleMenuClose} id="solid_box_button">Box</Button>
+                                <Button onClick={handleMenuClose} id="solid_box_button" disabled>Box</Button>
                             </MenuItem>
                             <MenuItem>
                                 <Button onClick={handleMenuClose} id="solid_circle_button">Circle</Button>
@@ -170,10 +170,10 @@ export const Drawing = ({ children }) => {
                             onClose={handleMenuCloseHollowShapes}
                         >
                             <MenuItem>
-                                <Button onClick={handleMenuCloseHollowShapes} id="hollow_box_button">Hollow Box</Button>
+                                <Button onClick={handleMenuCloseHollowShapes} id="hollow_box_button" disabled>Hollow Box</Button>
                             </MenuItem>
                             <MenuItem>
-                                <Button onClick={handleMenuCloseHollowShapes} id="hollow_circle_button">Hollow Circle</Button>
+                                <Button onClick={handleMenuCloseHollowShapes} id="hollow_circle_button" disabled>Hollow Circle</Button>
                             </MenuItem>
                             <MenuItem>
                                 <Button onClick={handleMenuCloseHollowShapes} id="hollow_rectangle_button">Hollow Rectangle</Button>
