@@ -14,7 +14,7 @@
             function init() {
                 canvaso = document.getElementById('drawingCanvas');
                 if (!canvaso) {
-                    alert('Error! The canvas element was not found!');
+                    //alert('Error! The canvas element was not found!');
                     return;
                 }
                 if (!canvaso.getContext) {
