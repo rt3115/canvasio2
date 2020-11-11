@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './chat.module.css';
+import './chatModule.css';
 import SendIcon from '@material-ui/icons/Send';
 import FormatItalicIcon from '@material-ui/icons/FormatItalic';
 import FormatUnderlinedIcon from '@material-ui/icons/FormatUnderlined';

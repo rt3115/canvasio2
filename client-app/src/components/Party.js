@@ -1,6 +1,6 @@
 import React from 'react';
 import Chat from './chat/Chat';
-import '../styles/party.module.css';
+import '../styles/party.css';
 
 const canvases = [
   { name: 'sneakyturtle' },
@@ -41,4 +41,4 @@ export const Party = ( {props} ) => {
       <Chat />
     </div>
   );
-};
+}

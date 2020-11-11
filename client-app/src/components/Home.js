@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from '@material-ui/core';
 import '../styles/home.css'
 import '../styles/w3.css'
 import background from "../refs/background.jpg";
+import Chat from './chat/Chat';
 
 var sectionStyle = {
     width: "400%",
