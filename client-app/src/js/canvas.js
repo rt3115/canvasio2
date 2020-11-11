@@ -312,7 +312,77 @@
                 };
             };
 
-            //solid rectable tool
+            //solid box
+            tools.solidBox = function () {
+                var tool = this;
+                this.started = false;
+                this.mousedown = function (ev) {
+                    tool.started = true;
+                    tool.x0 = ev._x;
+                    tool.y0 = ev._y;
+                };
+                this.mousemove = function (ev) {
+                    if (!tool.started) {
+                        return;
+                    }
+                    // This creates a rectangle on the canvas. 
+                    var x = Math.min(ev._x, tool.x0),
+                        y = Math.min(ev._y, tool.y0),
+                        w = Math.abs(ev._x - tool.x0),
+                        h = Math.abs(ev._y - tool.y0);
+                    context.clearRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
+
+                    if (!w || !h) {
+                        return;
+                    }
+                    context.fillRect(x, y, w, w);
+                };
+                // Now when you select the rectangle tool, you can draw rectangles. 
+                this.mouseup = function (ev) {
+                    if (tool.started) {
+                        tool.mousemove(ev);
+                        tool.started = false;
+                        img_update();
+                    }
+                };
+            };
+
+            //hollow box
+            tools.hollowBox = function () {
+                var tool = this;
+                this.started = false;
+                this.mousedown = function (ev) {
+                    tool.started = true;
+                    tool.x0 = ev._x;
+                    tool.y0 = ev._y;
+                };
+                this.mousemove = function (ev) {
+                    if (!tool.started) {
+                        return;
+                    }
+                    // This creates a rectangle on the canvas. 
+                    var x = Math.min(ev._x, tool.x0),
+                        y = Math.min(ev._y, tool.y0),
+                        w = Math.abs(ev._x - tool.x0),
+                        h = Math.abs(ev._y - tool.y0);
+                    context.clearRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
+
+                    if (!w || !h) {
+                        return;
+                    }
+                    context.strokeRect(x, y, w, w);
+                };
+                // Now when you select the rectangle tool, you can draw rectangles. 
+                this.mouseup = function (ev) {
+                    if (tool.started) {
+                        tool.mousemove(ev);
+                        tool.started = false;
+                        img_update();
+                    }
+                };
+            };
+
+            //solid Rect
             tools.solidRect = function () {
                 var tool = this;
                 this.started = false;
@@ -335,7 +405,7 @@
                     if (!w || !h) {
                         return;
                     }
-                    context.fillRect(x, y, w, h);
+                    context.fillRect(x, y, w, w);
                 };
                 // Now when you select the rectangle tool, you can draw rectangles. 
                 this.mouseup = function (ev) {
@@ -393,7 +463,6 @@
 
 
             //hollow circle
-            //solid circle
             tools.hollowCircle = function () {
                 var tool = this;
                 this.started = false;
