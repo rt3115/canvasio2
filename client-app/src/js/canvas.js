@@ -330,7 +330,7 @@
                         y = Math.min(ev._y, tool.y0),
                         w = Math.abs(ev._x - tool.x0),
                         h = Math.abs(ev._y - tool.y0);
-                    //context.strokeRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
+                    context.clearRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
 
                     if (!w || !h) {
                         return;
