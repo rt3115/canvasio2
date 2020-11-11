@@ -391,6 +391,52 @@
                 };
             };
 
+
+            //hollow circle
+            //solid circle
+            tools.hollowCircle = function () {
+                var tool = this;
+                this.started = false;
+                this.mousedown = function (ev) {
+                    tool.started = true;
+                    tool.x0 = ev._x;
+                    tool.y0 = ev._y;
+                    
+                    //context.arc(ev._x, ev._y, 10, 0, 2 * Math.PI, true);
+                };
+                this.mousemove = function (ev) {
+                    if (!tool.started) {
+                        return;
+                    }
+
+                    // This creates a rectangle on the canvas. 
+                    var x = Math.min(ev._x, tool.x0),
+                        y = Math.min(ev._y, tool.y0),
+                        w = Math.abs(ev._x - tool.x0),
+                        h = Math.abs(ev._y - tool.y0);
+
+
+                    context.clearRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
+
+                    if (!w || !h) {
+                        return;
+                    }
+                    context.beginPath();
+                    context.arc(ev._x, ev._y, w, 0, 2 * Math.PI, true);
+                    context.stroke();
+                    
+                };
+                // Now when you select the rectangle tool, you can draw rectangles. 
+                this.mouseup = function (ev) {
+                    if (tool.started) {
+                        tool.mousemove(ev);
+                        tool.started = false;
+                        
+                        img_update();
+                    }
+                };
+            };
+
             // The line tool. 
             tools.line = function () {
                 var tool = this;
