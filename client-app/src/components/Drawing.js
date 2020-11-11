@@ -86,7 +86,7 @@ export const Drawing = ({ children }) => {
 
 
     //shapes menu stuff
-    const[anchorE1, setAnchorE1] = React.useState(null);
+    const[anchore1, setAnchorE1] = React.useState(null);
 
     const handleMenuClick = (event) => {
         setAnchorE1(event.currentTarget);
@@ -95,6 +95,16 @@ export const Drawing = ({ children }) => {
     const handleMenuClose = () => {
         setAnchorE1(null);
     };
+
+    const[anchore2, setAnchorE2] = React.useState(null);
+
+    const handleMenuClickHollowShapes = (event) => {
+        setAnchorE2(event.currentTarget);
+    };
+
+    const handleMenuCloseHollowShapes = (event) => {
+        setAnchorE2(null);
+    }
 
     return (
 
@@ -118,6 +128,7 @@ export const Drawing = ({ children }) => {
                         <Button variant="outlined" id="eraser_button">Eraser</Button>
                         <Button variant="outlined" id="line_button">Line</Button>
                         <Button variant="outlined" id="rect_button">Rectangle</Button>
+                        
                         <Button 
                             variant="outlined"
                             onClick={handleMenuClick} 
@@ -128,44 +139,44 @@ export const Drawing = ({ children }) => {
 
                         <Menu
                             id="full-shapes-menu"
-                            anchorE1={anchorE1}
+                            anchorE1={anchore1}
                             keepMounted
-                            open={Boolean(anchorE1)}
+                            open={Boolean(anchore1)}
                             onClose={handleMenuClose}
                         >
                             <MenuItem>
-                                <Button onClick={handleMenuClose}>Box</Button>
+                                <Button onClick={handleMenuClose} id="solid_box_button">Box</Button>
                             </MenuItem>
                             <MenuItem>
-                                <Button onClick={handleMenuClose}>Circle</Button>
+                                <Button onClick={handleMenuClose} id="solid_circle_button">Circle</Button>
                             </MenuItem>
                             <MenuItem>
-                                <Button onClick={handleMenuClose}>Rectangle</Button>
+                                <Button onClick={handleMenuClose} id="solid_rectangle_button">Rectangle</Button>
                             </MenuItem>
                         </Menu>
 
                         <Button 
                         variant="outlined" 
                         id="hollow_shapes_menu"
-                        onClick={handleMenuClick}
+                        onClick={handleMenuClickHollowShapes}
                         >
                             Hollow Shapes
                         </Button>
                         <Menu
                             id="full-shapes-menu"
-                            anchorE1={anchorE1}
+                            anchorE1={anchore2}
                             keepMounted
-                            open={Boolean(anchorE1)}
-                            onClose={handleMenuClose}
+                            open={Boolean(anchore2)}
+                            onClose={handleMenuCloseHollowShapes}
                         >
                             <MenuItem>
-                                <Button onClick={handleMenuClose}>Hollow Box</Button>
+                                <Button onClick={handleMenuCloseHollowShapes} id="hollow_box_button">Hollow Box</Button>
                             </MenuItem>
                             <MenuItem>
-                                <Button onClick={handleMenuClose}>Hollow Circle</Button>
+                                <Button onClick={handleMenuCloseHollowShapes} id="hollow_circle_button">Hollow Circle</Button>
                             </MenuItem>
                             <MenuItem>
-                                <Button onClick={handleMenuClose}>Hollow Rectangle</Button>
+                                <Button onClick={handleMenuCloseHollowShapes} id="hollow_rectangle_button">Hollow Rectangle</Button>
                             </MenuItem>
                         </Menu>
 

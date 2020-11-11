@@ -59,9 +59,14 @@
                 var eraser_btn = document.getElementById('eraser_button');
                 var line_btn = document.getElementById('line_button');
                 var rect_btn = document.getElementById('rect_button');
-                
-                
-                //width_slider.addEventListener('change', changeWidth, false);
+
+                var solid_box_btn = document.getElementById('solid_box_button');
+                var solid_circle_btn = document.getElementById('solid_circle_button');
+                var solid_rect_btn = document.getElementById('solid_rectangle_button');
+
+                var hollow_box_btn = document.getElementById('hollow_box_button');
+                var hollow_circle_btn = document.getElementById('hollow_circle_button');
+                var hollow_rect_btn = document.getElementById('hollow_rectangle_button');
 
                 var color_picker = document.getElementById('colorPicker');
 
@@ -72,7 +77,14 @@
                 eraser_btn.addEventListener('click', changeToEraser, false);
                 line_btn.addEventListener('click', changeToLine, false);
                 rect_btn.addEventListener('click', changeToRect, false);
-                
+
+                solid_box_btn.addEventListener('click', changeToSolidBox, false);
+                solid_circle_btn.addEventListener('click', changeToSolidCircle, false);
+                solid_rect_btn.addEventListener('click', changeToSolidRect, false);
+
+                hollow_box_btn.addEventListener('click', changeToHollowBox, false);
+                hollow_circle_btn.addEventListener('click', chnageToHollowCircle, false);
+                hollow_rect_btn.addEventListener('click', changeToHollowRect, false);
 
                 //change the tool
                 function changeToPaint() {
@@ -96,6 +108,42 @@
                 function changeToEraser() {
                     tool = new tools['eraser']();
                     tool_select.value = 'eraser';
+                }
+
+                function changeToSolidBox() {
+                    tool = new tools['solidBox']();
+                    tool_select.value = 'solidBox';
+                    context.strokeStyle = color_picker.value;
+                }
+
+                function changeToSolidCircle(){
+                    tool = new tools['solidCircle']();
+                    tool_select.value = 'solidCircle';
+                    context.strokeStyle = color_picker.value;
+                }
+
+                function changeToSolidRect(){
+                    tool = new tools['solidRect']();
+                    tool_select.value = 'solidRect';
+                    context.strokeStyle = color_picker.value;
+                }
+
+                function changeToHollowBox(){
+                    tool = new tools['hollowBox']();
+                    tool_select.value = 'hollowBox';
+                    context.strokeStyle = color_picker.value;
+                }
+
+                function chnageToHollowCircle(){
+                    tool = new tools['hollowCircle']();
+                    tool_select.value = 'hollowCircle';
+                    context.strokeStyle = color_picker.value;
+                }
+
+                function changeToHollowRect(){
+                    tool = new tools['hollowRect']();
+                    tool_select.value = 'hollowRect';
+                    context.strokeStyle = color_picker.value;
                 }
 
                 //color picker stuff
@@ -213,6 +261,76 @@
                         w = Math.abs(ev._x - tool.x0),
                         h = Math.abs(ev._y - tool.y0);
                     context.clearRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
+
+                    if (!w || !h) {
+                        return;
+                    }
+                    context.strokeRect(x, y, w, h);
+                };
+                // Now when you select the rectangle tool, you can draw rectangles. 
+                this.mouseup = function (ev) {
+                    if (tool.started) {
+                        tool.mousemove(ev);
+                        tool.started = false;
+                        img_update();
+                    }
+                };
+            };
+
+            //hollow rectangle tool
+            tools.hollowRect = function () {
+                var tool = this;
+                this.started = false;
+                this.mousedown = function (ev) {
+                    tool.started = true;
+                    tool.x0 = ev._x;
+                    tool.y0 = ev._y;
+                };
+                this.mousemove = function (ev) {
+                    if (!tool.started) {
+                        return;
+                    }
+                    // This creates a rectangle on the canvas. 
+                    var x = Math.min(ev._x, tool.x0),
+                        y = Math.min(ev._y, tool.y0),
+                        w = Math.abs(ev._x - tool.x0),
+                        h = Math.abs(ev._y - tool.y0);
+                    context.clearRect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
+
+                    if (!w || !h) {
+                        return;
+                    }
+                    context.strokeRect(x, y, w, h);
+                };
+                // Now when you select the rectangle tool, you can draw rectangles. 
+                this.mouseup = function (ev) {
+                    if (tool.started) {
+                        tool.mousemove(ev);
+                        tool.started = false;
+                        img_update();
+                    }
+                };
+            };
+
+            //solid rectable tool
+            tools.solidRect = function () {
+                var tool = this;
+                this.started = false;
+                this.mousedown = function (ev) {
+                    tool.started = true;
+                    tool.x0 = ev._x;
+                    tool.y0 = ev._y;
+                };
+                this.mousemove = function (ev) {
+                    if (!tool.started) {
+                        return;
+                    }
+                    // This creates a rectangle on the canvas. 
+                    var x = Math.min(ev._x, tool.x0),
+                        y = Math.min(ev._y, tool.y0),
+                        w = Math.abs(ev._x - tool.x0),
+                        h = Math.abs(ev._y - tool.y0);
+                    context.rect(0, 0, canvas.width, canvas.height);// Clears the rectangle onload. 
 
                     if (!w || !h) {
                         return;
