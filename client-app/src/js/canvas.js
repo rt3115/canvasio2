@@ -56,12 +56,9 @@
 
                 //get all the buttons i need to use yay
                 var paint_brush_tool = document.getElementById('paint_button');
-                var increase_width_btn = document.getElementById('increase_width_button');
-                var decrease_width_btn = document.getElementById('decrease_width_button');
                 var eraser_btn = document.getElementById('eraser_button');
                 var line_btn = document.getElementById('line_button');
                 var rect_btn = document.getElementById('rect_button');
-                var width_slider = document.getElementById('width_slider');
                 
                 
                 //width_slider.addEventListener('change', changeWidth, false);
@@ -71,8 +68,6 @@
                 //add the listeners
                 paint_brush_tool.addEventListener('click', changeToPaint, false);
 
-                increase_width_btn.addEventListener('click', increaseWidth, false);
-                decrease_width_btn.addEventListener('click', decreaseWidth, false);
                 color_picker.addEventListener('change', watchColorPicker, false);
                 eraser_btn.addEventListener('click', changeToEraser, false);
                 line_btn.addEventListener('click', changeToLine, false);

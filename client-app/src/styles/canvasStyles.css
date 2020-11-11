@@ -29,7 +29,7 @@
 }
 
 #canvasHolder{
-    width: 10px;
+    width: 0px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
 }
@@ -51,6 +51,7 @@
     /*position: absolute;
     z-index: 99999;
     margin-top: -30px; */
+    visibility: hidden;
 }
 
 select {
@@ -59,15 +60,16 @@ select {
   background-color: #eaeaea;
 }
 
-.btn-group button {
-    padding: 40px 50px;
-    display: block;
-    width: 100%; /* Set a width if needed */
+.btn-group-toolbar button {
+    padding: 20px 30px;
+    margin-left: 40px;
+    display: flex;
+    width: 60%; /* Set a width if needed */
 }
 
 #colorPicker {
-    width: 100%;
-    min-height: 75px;
+    min-height: 50px;
+    display: fe;
 }
 
 .vertical-center {
@@ -76,6 +78,15 @@ select {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+.layer-tabs {
+  margin-top: 100px;
+  margin-left: 100px;
+  display: flex;
+  indicator: {
+    top: 10px;
+  }
 }
 
 .circle{
