@@ -14,7 +14,7 @@
             function init() {
                 canvaso = document.getElementById('drawingCanvas');
                 if (!canvaso) {
-                    //alert('Error! The canvas element was not found!');
+                    alert('Error! The canvas element was not found!');
                     return;
                 }
                 if (!canvaso.getContext) {
@@ -41,7 +41,7 @@
                 canvas.height = canvaso.height;
                 container.appendChild(canvas);
                 context = canvas.getContext('2d');
-                context.strokeStyle = "#425af5";// Default line color. 
+                context.strokeStyle = "#000000";// Default line color. 
                 context.lineWidth = 5.0;// Default stroke weight. 
 
                 // Fill transparent canvas with dark grey (So we can use the color to erase). 
@@ -56,6 +56,11 @@
                 var eraser_btn = document.getElementById('eraser_button');
                 var line_btn = document.getElementById('line_button');
                 var rect_btn = document.getElementById('rect_button');
+                var width_slider = document.getElementById('width_slider');
+
+                if(width_slider){
+                    width_slider.addEventListener('change', changeWidth, false);
+                }
 
                 var color_picker = document.getElementById('colorPicker');
 
@@ -68,21 +73,25 @@
                 eraser_btn.addEventListener('click', changeToEraser, false);
                 line_btn.addEventListener('click', changeToLine, false);
                 rect_btn.addEventListener('click', changeToRect, false);
+                
 
                 //change the tool
                 function changeToPaint() {
                     tool = new tools['chalk']();
                     tool_select.value = 'chalk';
+                    context.strokeStyle = color_picker.value;
                 }
 
                 function changeToLine() {
                     tool = new tools['line']();
                     tool_select.value = 'line';
+                    context.strokeStyle = color_picker.value;
                 } 
 
                 function changeToRect() {
                     tool = new tools['rect']();
                     tool_select.value = 'rect';
+                    context.strokeStyle = color_picker.value;
                 }
 
                 function changeToEraser() {
@@ -105,6 +114,13 @@
 
                 function decreaseWidth() {
                     context.lineWidth -= .5;
+                }
+
+                function changeWidth(event){
+                    document.querySelectorAll("p").forEach(function (p ) {
+                        p.style.lineWidth = event.target.value;
+                        context.lineWidth = p.style.lineWidth;
+                    });
                 }
 
                 // Create a select field with our tools. 

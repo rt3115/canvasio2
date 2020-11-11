@@ -10,6 +10,8 @@ import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import background from "../refs/background.jpg";
+import WidthSlider from "./drawing/WidthSlider.jsx";
+import BrushIcon from '@material-ui/icons/Brush';
 
 const useStyles = makeStyles({
     root: {
@@ -54,7 +56,7 @@ const PrettoSlider = withStyles({
 var sectionStyle = {
     width: "400%",
     height: "800px",
-    backgroundImage: `url(${background})`
+    //backgroundImage: `url(${background})`
 
 };
 
@@ -87,8 +89,9 @@ export const Drawing = ( { children }) => {
                                 <option value="rect">Rectangle</option>
                             </select>
                         </p>
+                        
                         <div className="btn-group">
-                            <Button className="w3-button w3-white w3-border" id="paint_button">Paint</Button>
+                            <Button className="w3-button w3-white w3-border" id="paint_button"> <BrushIcon /></Button>
                             <Button className="w3-button w3-white w3-border" id="eraser_button">Eraser</Button>
                             <Button className="w3-button w3-white w3-border" id="line_button">Line</Button>
                             <Button className="w3-button w3-white w3-border" id="rect_button">Rectangle</Button>
@@ -104,6 +107,9 @@ export const Drawing = ( { children }) => {
                         
                     </Grid>
                     <Grid item>
+                        <Grid container spacing={2} alignItems="center">
+                            <Grid item> <WidthSlider id="width_slider"/> </Grid>
+                        </Grid>
                         <div id="wrapper">
                                                       
 
