@@ -8,6 +8,7 @@
             }, false);
     }
 
+    
     function drawing(){
         var canvas, canvaso, contexto;
             // Default tool. (chalk, line, rectangle) 
@@ -61,10 +62,9 @@
                 var line_btn = document.getElementById('line_button');
                 var rect_btn = document.getElementById('rect_button');
                 var width_slider = document.getElementById('width_slider');
-
-                if(width_slider){
-                    width_slider.addEventListener('change', changeWidth, false);
-                }
+                
+                
+                //width_slider.addEventListener('change', changeWidth, false);
 
                 var color_picker = document.getElementById('colorPicker');
 
@@ -121,6 +121,7 @@
                 }
 
                 function changeWidth(event){
+                    console.log("changing width");
                     document.querySelectorAll("p").forEach(function (p ) {
                         p.style.lineWidth = event.target.value;
                         context.lineWidth = p.style.lineWidth;
@@ -312,4 +313,9 @@
     export default function ForceLoad(){
         console.log("forced loading");
         drawing();
+    }
+
+    export function WidthChange(value){
+        context.lineWidth = value;
+        console.log("did I do something?");
     }

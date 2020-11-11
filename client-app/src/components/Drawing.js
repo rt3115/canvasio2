@@ -35,6 +35,9 @@ function forceLoad() {
     console.log("im working");
     fs.default();
 }
+function changeWidth(value){
+    fs.WidthChange(value);
+}
 
 export const Drawing = ( { children }) => {
       //This is going to be disgusting, yay
@@ -42,6 +45,26 @@ export const Drawing = ( { children }) => {
         const handleClick = () => {
            forceLoad();
       }
+
+      const classes = useStyles();
+      const [value, setValue] = React.useState(30);
+
+  const handleSliderChange = (event, newValue) => {
+    setValue(newValue);
+    changeWidth(newValue);
+  };
+
+  const handleInputChange = (event) => {
+    setValue(event.target.value === '' ? '' : Number(event.target.value));
+  };
+
+  const handleBlur = () => {
+    if (value < 0) {
+      setValue(0);
+    } else if (value > 200) {
+      setValue(200);
+    }
+  };
 
         return (
 
@@ -90,7 +113,40 @@ export const Drawing = ( { children }) => {
                     <Grid item>
                         <Grid container spacing={2} alignItems="center">
                             <Grid item> <button onClick={handleClick}> Start Drawing </button> </Grid>
-                            <Grid item> <WidthSlider id="width_slider"/> </Grid>
+                            <Grid item> 
+                            <div className={classes.root}>
+                                <Grid container spacing={2} alignItems="center">
+                                <Grid item>
+                                    Width
+                                </Grid>
+                                <Grid item xs>
+                                <Slider
+                                    value={typeof value === 'number' ? value : 0}
+                                    onChange={handleSliderChange}
+                                    aria-labelledby="input-slider"
+                                />
+                                </Grid>
+                                <Grid item>
+                                <Input
+                                    className={classes.input}
+                                    value={value}
+                                    margin="dense"
+                                    onChange={handleInputChange}
+                                    onBlur={handleBlur}
+                                    inputProps={{
+                                    step: 10,
+                                    min: 0,
+                                    max: 200,
+                                    type: 'number',
+                                    'aria-labelledby': 'input-slider',
+                                    }}
+                                />
+                                </Grid>
+                            </Grid>
+                            </div> 
+                            
+                            
+                            </Grid>
                         </Grid>
                         <div id="wrapper">
                                                       
