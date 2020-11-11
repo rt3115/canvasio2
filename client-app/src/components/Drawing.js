@@ -44,6 +44,11 @@ function changeWidth(value) {
     fs.WidthChange(value);
 }
 
+
+
+//shapes menu stuff
+
+
 export const Drawing = ({ children }) => {
     //This is going to be disgusting, yay
 
@@ -81,6 +86,15 @@ export const Drawing = ({ children }) => {
 
 
     //shapes menu stuff
+    const[anchorE1, setAnchorE1] = React.useState(null);
+
+    const handleMenuClick = (event) => {
+        setAnchorE1(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorE1(null);
+    };
 
     return (
 
@@ -104,8 +118,57 @@ export const Drawing = ({ children }) => {
                         <Button variant="outlined" id="eraser_button">Eraser</Button>
                         <Button variant="outlined" id="line_button">Line</Button>
                         <Button variant="outlined" id="rect_button">Rectangle</Button>
-                        <Button variant="outlined" id="full_shappes_menu">Full Shapes</Button>
-                        <Button variant="outlined" id="hollow_shapes_menu">Hollow Shapes</Button>
+                        <Button 
+                            variant="outlined"
+                            onClick={handleMenuClick} 
+                            id="full_shappes_menu"
+                        >
+                            Full Shapes
+                        </Button>
+
+                        <Menu
+                            id="full-shapes-menu"
+                            anchorE1={anchorE1}
+                            keepMounted
+                            open={Boolean(anchorE1)}
+                            onClose={handleMenuClose}
+                        >
+                            <MenuItem>
+                                <Button onClick={handleMenuClose}>Box</Button>
+                            </MenuItem>
+                            <MenuItem>
+                                <Button onClick={handleMenuClose}>Circle</Button>
+                            </MenuItem>
+                            <MenuItem>
+                                <Button onClick={handleMenuClose}>Rectangle</Button>
+                            </MenuItem>
+                        </Menu>
+
+                        <Button 
+                        variant="outlined" 
+                        id="hollow_shapes_menu"
+                        onClick={handleMenuClick}
+                        >
+                            Hollow Shapes
+                        </Button>
+                        <Menu
+                            id="full-shapes-menu"
+                            anchorE1={anchorE1}
+                            keepMounted
+                            open={Boolean(anchorE1)}
+                            onClose={handleMenuClose}
+                        >
+                            <MenuItem>
+                                <Button onClick={handleMenuClose}>Hollow Box</Button>
+                            </MenuItem>
+                            <MenuItem>
+                                <Button onClick={handleMenuClose}>Hollow Circle</Button>
+                            </MenuItem>
+                            <MenuItem>
+                                <Button onClick={handleMenuClose}>Hollow Rectangle</Button>
+                            </MenuItem>
+                        </Menu>
+
                     </div>
 
 
