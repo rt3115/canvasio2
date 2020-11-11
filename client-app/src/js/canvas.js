@@ -1,20 +1,24 @@
-﻿
-       var context;
+﻿    var context;
 
-    // Check for the canvas tag onload. 
+    // Check for the canvas tag onload.
     if (window.addEventListener) {
+        console.log("got this far");
         window.addEventListener('load', function () {
-            var canvas, canvaso, contexto;
+            drawing();
+            }, false);
+    }
+
+    function drawing(){
+        var canvas, canvaso, contexto;
             // Default tool. (chalk, line, rectangle) 
             var tool;
             var tool_default = 'chalk';
-
             //eraser items;
-
+            console.log("drawing...");
             function init() {
                 canvaso = document.getElementById('drawingCanvas');
                 if (!canvaso) {
-                    //alert('Error! The canvas element was not found!');
+                    console.log("This is not the correct page...");
                     return;
                 }
                 if (!canvaso.getContext) {
@@ -302,5 +306,10 @@
 
             };
             init();
-        }, false);
+        
+    }
+
+    export default function ForceLoad(){
+        console.log("forced loading");
+        drawing();
     }

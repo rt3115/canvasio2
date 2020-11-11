@@ -22,37 +22,6 @@ const useStyles = makeStyles({
     },
 });
 
-const PrettoSlider = withStyles({
-    root: {
-        color: '#52af77',
-        height: 8,
-        width: 200,
-    },
-    thumb: {
-        height: 24,
-        width: 24,
-        backgroundColor: '#fff',
-        border: '2px solid currentColor',
-        marginTop: -8,
-        marginLeft: -12,
-        '&:focus, &:hover, &$active': {
-            boxShadow: 'inherit',
-        },
-    },
-    active: {},
-    valueLabel: {
-        left: 'calc(-50% + 4px)',
-    },
-    track: {
-        height: 8,
-        borderRadius: 4,
-    },
-    rail: {
-        height: 8,
-        borderRadius: 4,
-    },
-})(Slider);
-
 var sectionStyle = {
     width: "400%",
     height: "800px",
@@ -60,13 +29,25 @@ var sectionStyle = {
 
 };
 
+//this is so gross...
+const fs = require('../js/canvas.js');
+function forceLoad() {
+    console.log("im working");
+    fs.default();
+}
+
 export const Drawing = ( { children }) => {
       //This is going to be disgusting, yay
 
+        const handleClick = () => {
+           forceLoad();
+      }
+
         return (
+
             <section style={sectionStyle}>
                 
-                <script type="text/javascript" src="./js/canvas.js"></script>
+                <script type="text/javascript" src="../js/canvas.js"></script>
 
                 <Grid container>
                     <Grid item>
@@ -108,6 +89,7 @@ export const Drawing = ( { children }) => {
                     </Grid>
                     <Grid item>
                         <Grid container spacing={2} alignItems="center">
+                            <Grid item> <button onClick={handleClick}> Start Drawing </button> </Grid>
                             <Grid item> <WidthSlider id="width_slider"/> </Grid>
                         </Grid>
                         <div id="wrapper">
@@ -128,51 +110,4 @@ export const Drawing = ( { children }) => {
              </section >
             );
 
-        //return <Canvas />
-        /*
-        return (
-            <Grid>
-                <script type="text/javascript" src="./js/canvas.js"></script>
-                <Col>
-                    <Row>
-                        <h1> Canvas Name Goes Here </h1>
-                    </Row>
-                    <Row>
-                        <buttonGroup aria-label="Basic example">
-                            <button variant="secondary">
-                                <Glyphicon glyph='glyphicon glyphicon-erase' />
-                            </button>
-                            <button variant="secondary">
-                               <Glyphicon glyph='glyphicon glyphicon-pencil' />
-                            </button>
-                            <button variant="secondary">
-                               <Glyphicon glyph='glyphicon glyphicon-tint' />
-                            </button>
-                        </buttonGroup>
-                    </Row>
-                    <Row>
-                        <link rel="stylesheet" type="text/css" href="./styles/canvasstyles.css" />
-                        
-                        <div id="wrapper">
-                            <div id="canvasPlaceHolder">
-                                <p>
-                                        <select name="selector" id="selector">
-                                        <option value="chalk">Chalk</option>
-                                        <option value="line">Line</option>
-                                        <option value="rect">Rectangle</option>
-                                    </select>
-                                </p>
-                                <div id="paint">
-                                    
-                                </div>
-                                <canvas id="drawingCanvas" width="800" height="800">
-                                    <p className="noscript">It broke, have fun!</p>
-                                </canvas>
-                            </div>
-                        </div>
-                    </Row>
-                </Col>
-        </Grid>
-    );
-    */
   }
