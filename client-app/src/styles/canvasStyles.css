@@ -1,8 +1,15 @@
 ﻿body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 30px;
   line-height: 27px;
+}
+
+#start_drawing {
+  position: relative;
+  margin-left: 0px;
+  margin-top: 0px;
+  height: 900px;
+  width: 1000px;
 }
 
 #wrapper {
@@ -21,25 +28,25 @@
 }
 
 #drawingCanvas {
-    position: absolute;
-    border: none;
-    color: #FFF;
-    overflow: hidden;
-    border: 10px;
+  position: absolute;
+  border: none;
+  color: #FFF;
+  overflow: hidden;
+  border: 10px;
 }
 
-#canvasHolder{
-    width: 0px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
+#canvasHolder {
+  width: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
 }
 
 #tempCanvas {
-    position: absolute;
-    width: 897px;
-    height: 532px;
-    overflow: hidden;
-    box-shadow: 2px 2px;
+  position: absolute;
+  width: 897px;
+  height: 532px;
+  overflow: hidden;
+  box-shadow: 2px 2px;
 }
 
 .noscript {
@@ -48,10 +55,10 @@
 }
 
 #selector {
-    /*position: absolute;
+  /*position: absolute;
     z-index: 99999;
     margin-top: -30px; */
-    visibility: hidden;
+  visibility: hidden;
 }
 
 select {
@@ -61,39 +68,45 @@ select {
 }
 
 .btn-group-toolbar button {
-    padding: 20px 30px;
-    margin-left: 40px;
-    display: flex;
-    width: 60%; /* Set a width if needed */
+  padding: 20px 30px;
+  margin-left: 40px;
+  display: flex;
+  width: 60%;
+  /* Set a width if needed */
 }
 
 #colorPicker {
-    min-height: 50px;
-    display: fe;
+  min-height: 50px;
+  display: fe;
 }
 
 .vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .layer-tabs {
   margin-top: 100px;
   margin-left: 100px;
   display: flex;
-  
 }
 
-.circle{
-    height: 50px;
-    width: 50px;
-    background-color: aquamarine;
-    border-radius: 50%;
-    position : relative;
-    left: -25px;
-    top: -25px;
+.grayout {
+  opacity: 0.6;
+  /* Real browsers */
+  filter: alpha(opacity=60);
+  /* MSIE */
 }
 
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: aquamarine;
+  border-radius: 50%;
+  position: relative;
+  left: -25px;
+  top: -25px;
+}

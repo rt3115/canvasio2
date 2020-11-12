@@ -1,4 +1,5 @@
 ﻿var context;
+var started_drawing = false;
 
 // Check for the canvas tag onload.
 if (window.addEventListener) {
@@ -10,6 +11,13 @@ if (window.addEventListener) {
 
 
 function drawing() {
+    
+    var strt_btn = document.getElementById("start_drawing");
+    if(started_drawing){
+        strt_btn.setAttribute("style", "display: none");
+    }else{ 
+        return;
+    }
     var canvas, canvaso, contexto;
     // Default tool. (chalk, line, rectangle) 
     var tool;
@@ -603,12 +611,12 @@ function drawing() {
 
 export default function ForceLoad() {
     console.log("forced loading");
+    started_drawing = true;
     drawing();
 }
 
 export function WidthChange(value) {
     context.lineWidth = value;
-    console.log("did I do something?");
 }
 
 var img = null; //the img to be loaded if needed

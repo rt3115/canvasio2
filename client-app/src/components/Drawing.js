@@ -51,7 +51,16 @@ export const Drawing = ({ children }) => {
     //This is going to be disgusting, yay
 
 
-
+    function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        e.display = 'none';
+        /*
+        if(e.style.display == 'block')
+           e.style.display = 'none';
+        else
+           e.style.display = 'block';
+        */
+    }
 
 
     function getURLParameter(param) {
@@ -93,6 +102,7 @@ export const Drawing = ({ children }) => {
     const handleClick = () => {
         const fs = require('../js/canvas.js');
         fs.default();
+        toggle_visibility('start_drawing');
     }
 
 
@@ -236,7 +246,7 @@ export const Drawing = ({ children }) => {
                 <Grid item>
                     <Grid container spacing={2} alignItems="center">
 
-                        <Grid item> <Button onClick={handleClick}> Start Drawing </Button> </Grid>
+                        <Grid item>  </Grid>
                         <Grid item>
 
                             <div className={classes.root}>
@@ -281,6 +291,7 @@ export const Drawing = ({ children }) => {
                                 <canvas id="drawingCanvas" height="900px" width="1000px" className="w3-border" style={sectionStyle} >
                                     <p className="noscript">We're sorry, this web application is currently not supported with your browser. Please use an alternate browser or download a supported <br />browser. Supported browsers: <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, <br />and <a href="http://www.konqueror.org">Konqueror</a>. Also make sure your JavaScript is enabled.</p>
                                 </canvas>
+                                <button onClick={handleClick} id="start_drawing" variant="contained"> Click Anywhere here to begin drawing </button>
                             </div>
                         </div>
 
