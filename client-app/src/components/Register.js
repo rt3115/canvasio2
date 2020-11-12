@@ -19,7 +19,7 @@ export const Register = () => {
                     </head>
                     <body>
                         <h1>Register</h1>
-                        <form method="GET" action="ProfileSettings.html" onsubmit="return checkFields();">
+                        <form method="GET" action="#/ProfileSettings" onsubmit="return checkFields();">
                             <div className="container">
                                 <p>Enter your information below</p>
 
