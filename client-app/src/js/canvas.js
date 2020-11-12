@@ -1,4 +1,6 @@
-﻿var context;
+﻿import { Button } from "@material-ui/core";
+
+var context;
 var started_drawing = false;
 
 // Check for the canvas tag onload.
@@ -604,6 +606,14 @@ function drawing() {
         }
         ImgSet = true;
     }
+
+
+    //saving stuff
+    var downloadButton = document.getElementById("downloadButton");
+    downloadButton.addEventListener("click", function (e) {
+        var dataURL = canvaso.toDataURL("image/jpg");
+        downloadButton.href = dataURL;
+    })
 
     init();
 

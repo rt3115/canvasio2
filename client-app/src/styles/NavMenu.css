@@ -21,6 +21,17 @@ AppBar{
 
 }
 
+#new_canvas {
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: white;
+    font-size: 20px;
+}
+
 @media (min-width: 768px) {
   /* On large screens, convert the nav menu to a vertical sidebar */
   .navbar {

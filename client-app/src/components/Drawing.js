@@ -282,6 +282,9 @@ export const Drawing = ({ children }) => {
                         </Grid>
 
                         <Grid item> <input type="color" id="colorPicker" /> </Grid>
+                        <Grid item> 
+                            <a download="myImage.jpg" id="downloadButton" href="" type="button"> DownLoad </a>
+                        </Grid>
 
                     </Grid>
                     <div id="wrapper">
@@ -304,16 +307,6 @@ export const Drawing = ({ children }) => {
                         value={LayerValue}
                         onChange={handleLayerChange}
                     >
-                        <Tab label="L1" />
-                        <Tab label="L2" />
-                        <Tab label="L3" />
-                        <Tab label="L4" />
-                        <Tab label="L5" />
-                        <Tab label="L6" />
-                        <Tab label="L7" />
-                        <Tab label="L8" />
-                        <Tab label="L9" />
-                        <Tab label="L10" />
                     </Tabs>
                 </Grid>
             </Grid>
