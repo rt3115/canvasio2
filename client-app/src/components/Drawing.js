@@ -32,11 +32,7 @@ const useStyles = makeStyles({
     },
 });
 
-var sectionStyle = {
-    width: "1000px",
-    height: "900px",
-    backgroundImage: `url(${background})`
-};
+
 
 //this is so gross...
 const fs = require('../js/canvas.js');
@@ -74,15 +70,37 @@ export const Drawing = ({ children }) => {
         return false;
     }
 
-        //grabbing the image to load if there is one
-        var cId = getURLParameter('cId');
+    //grabbing the image to load if there is one
+    var cId = getURLParameter('cId');
+    var Image;
+
+    if (cId) {
+        switch (cId) {
+            case "canvas1": Image = pic1;
+                break;
+            case "canvas2": Image = pic2;
+                break;
+            case "canvas3": Image = pic3;
+                break;
+            case "canvas4": Image = pic4;
+                break;
+            case "canvas5": Image = pic5;
+                break;
+
+        }
+    }
+
     const handleClick = () => {
         const fs = require('../js/canvas.js');
-        if(cId){
-            fs.SetImage(cId);
-        }
         fs.default();
     }
+
+
+    var sectionStyle = {
+        width: "1000px",
+        height: "900px",
+        backgroundImage: `url(${Image})`
+    };
 
     //width slider stuff
     const classes = useStyles();
@@ -114,7 +132,7 @@ export const Drawing = ({ children }) => {
 
 
     //shapes menu stuff
-    const[anchore1, setAnchorE1] = React.useState(null);
+    const [anchore1, setAnchorE1] = React.useState(null);
 
     const handleMenuClick = (event) => {
         setAnchorE1(event.currentTarget);
@@ -124,7 +142,7 @@ export const Drawing = ({ children }) => {
         setAnchorE1(null);
     };
 
-    const[anchore2, setAnchorE2] = React.useState(null);
+    const [anchore2, setAnchorE2] = React.useState(null);
 
     const handleMenuClickHollowShapes = (event) => {
         setAnchorE2(event.currentTarget);
@@ -139,7 +157,7 @@ export const Drawing = ({ children }) => {
     return (
 
         <section>
-            <img src={pic1} style={{display: 'none'}} id="pic1"/>
+            <img src={pic1} style={{ display: 'none' }} id="pic1" />
             <script type="text/javascript" src="../js/canvas.js"></script>
 
             <Grid container>
@@ -158,10 +176,10 @@ export const Drawing = ({ children }) => {
                         <Button variant="outlined" id="eraser_button">Eraser</Button>
                         <Button variant="outlined" id="line_button">Line</Button>
                         <Button variant="outlined" id="rect_button">Rectangle</Button>
-                        
-                        <Button 
+
+                        <Button
                             variant="outlined"
-                            onClick={handleMenuClick} 
+                            onClick={handleMenuClick}
                             id="full_shappes_menu"
                         >
                             Full Shapes
@@ -185,10 +203,10 @@ export const Drawing = ({ children }) => {
                             </MenuItem>
                         </Menu>
 
-                        <Button 
-                        variant="outlined" 
-                        id="hollow_shapes_menu"
-                        onClick={handleMenuClickHollowShapes}
+                        <Button
+                            variant="outlined"
+                            id="hollow_shapes_menu"
+                            onClick={handleMenuClickHollowShapes}
                         >
                             Hollow Shapes
                         </Button>
@@ -260,7 +278,7 @@ export const Drawing = ({ children }) => {
 
                         <div id="canvasPlaceHolder">
                             <div id="canvasHolder">
-                                <canvas id="drawingCanvas" height="900px" width="1000px" className="w3-border"  style={sectionStyle} >
+                                <canvas id="drawingCanvas" height="900px" width="1000px" className="w3-border" style={sectionStyle} >
                                     <p className="noscript">We're sorry, this web application is currently not supported with your browser. Please use an alternate browser or download a supported <br />browser. Supported browsers: <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, <br />and <a href="http://www.konqueror.org">Konqueror</a>. Also make sure your JavaScript is enabled.</p>
                                 </canvas>
                             </div>
