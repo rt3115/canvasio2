@@ -22,11 +22,11 @@ export const Home = ( { children } ) => {
                 <link rel="stylesheet" href="refs/Home.css" />
             </head>
             <body className="cluster">
-                <h1>Canvas.io</h1>
-                <Button type="submit" href="#/register">
+                <h1 className="home">Canvas.io</h1>
+                <Button type="submit" href="#/register" className="button" variant="contained">
                     REGISTER
                 </Button>
-                <Button type="submit" href="#/login">
+                <Button type="submit" href="#/login" className="button" variant="contained">
                     LOGIN
                 </Button>
             </body>

@@ -8,6 +8,11 @@
     -ms-transform: translate(-50%,-50%)
 }
 
+h1.home {
+    font-size: 250%;
+    margin-bottom: 50px;
+}
+
 .root {
 
 }
