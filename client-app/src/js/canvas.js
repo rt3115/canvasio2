@@ -212,7 +212,7 @@ function drawing() {
     // Create the temporary canvas on top of the canvas, which is cleared each time the user draws. 
     function img_update() {
         if (!contexto) {
-            alert("Real bad...");
+            alert("Real bad... Contexto is null for somereason");
             return;
         }
         contexto.drawImage(canvas, 0, 0);
@@ -586,14 +586,6 @@ function drawing() {
     //draw the default img if needed
     if (img && ImgSet == false) {
         var image = document.getElementById('pic1');
-
-        if (image) {
-            alert("the image is here!");
-        }
-
-        if (context) {
-            alert("the context is working");
-        }
 
         if (image && context) {
             context.drawImage(image, 0, 0);
