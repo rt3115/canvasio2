@@ -339,6 +339,7 @@ function drawing() {
             if (!w || !h) {
                 return;
             }
+            context.fillStyle = context.strokeStyle;
             context.fillRect(x, y, w, w);
         };
         // Now when you select the rectangle tool, you can draw rectangles. 
@@ -409,6 +410,7 @@ function drawing() {
             if (!w || !h) {
                 return;
             }
+            context.fillStyle = context.strokeStyle;
             context.fillRect(x, y, w, h);
         };
         // Now when you select the rectangle tool, you can draw rectangles. 
@@ -451,6 +453,7 @@ function drawing() {
             }
             context.beginPath();
             context.arc(ev._x, ev._y, w, 0, 2 * Math.PI, true);
+            context.fillStyle = context.strokeStyle;
             context.fill();
 
         };
