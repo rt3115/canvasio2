@@ -409,7 +409,7 @@ function drawing() {
             if (!w || !h) {
                 return;
             }
-            context.fillRect(x, y, w, w);
+            context.fillRect(x, y, w, h);
         };
         // Now when you select the rectangle tool, you can draw rectangles. 
         this.mouseup = function (ev) {
@@ -613,5 +613,5 @@ var ImgSet = false;
 
 
 export function SetImage(value) {
-    img = value; 
+    //img = value; 
 }

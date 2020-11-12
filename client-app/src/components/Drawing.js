@@ -33,10 +33,9 @@ const useStyles = makeStyles({
 });
 
 var sectionStyle = {
-    width: "400%",
-    height: "800px",
-    //backgroundImage: `url(${background})`
-
+    width: "1000px",
+    height: "900px",
+    backgroundImage: `url(${background})`
 };
 
 //this is so gross...
@@ -139,7 +138,7 @@ export const Drawing = ({ children }) => {
 
     return (
 
-        <section style={sectionStyle} >
+        <section>
             <img src={pic1} style={{display: 'none'}} id="pic1"/>
             <script type="text/javascript" src="../js/canvas.js"></script>
 
@@ -261,7 +260,7 @@ export const Drawing = ({ children }) => {
 
                         <div id="canvasPlaceHolder">
                             <div id="canvasHolder">
-                                <canvas id="drawingCanvas" height="800" width="1020" className="w3-border">
+                                <canvas id="drawingCanvas" height="900px" width="1000px" className="w3-border"  style={sectionStyle} >
                                     <p className="noscript">We're sorry, this web application is currently not supported with your browser. Please use an alternate browser or download a supported <br />browser. Supported browsers: <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, <br />and <a href="http://www.konqueror.org">Konqueror</a>. Also make sure your JavaScript is enabled.</p>
                                 </canvas>
                             </div>
