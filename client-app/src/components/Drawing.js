@@ -41,10 +41,7 @@ var sectionStyle = {
 
 //this is so gross...
 const fs = require('../js/canvas.js');
-function forceLoad() {
-    console.log("im working");
-    fs.default();
-}
+
 
 function changeWidth(value) {
     fs.WidthChange(value);
@@ -60,10 +57,7 @@ export const Drawing = ({ children }) => {
 
 
 
-    //grabbing the image to load if there is one
-    var cId = getURLParameter('cId');
-    var width;
-    var length;
+
 
     function getURLParameter(param) {
         var pageURL = window.location.search.substring(1);
@@ -81,12 +75,14 @@ export const Drawing = ({ children }) => {
         return false;
     }
 
+        //grabbing the image to load if there is one
+        var cId = getURLParameter('cId');
     const handleClick = () => {
+        const fs = require('../js/canvas.js');
         if(cId){
-            const fs = require('../js/canvas.js');
             fs.SetImage(cId);
         }
-        forceLoad();
+        fs.default();
     }
 
     //width slider stuff
