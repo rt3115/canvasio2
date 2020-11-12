@@ -13,6 +13,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import pic1 from "../refs/pic1.JPG";
+import pic2 from "../refs/pic2.jpg";
+import pic3 from "../refs/pic3.jpg";
+import pic4 from "../refs/pic4.jpg";
+import pic5 from "../refs/pic5.jpg";
 
 const useStyles = makeStyles({
     root: {
@@ -40,6 +45,7 @@ function forceLoad() {
     console.log("im working");
     fs.default();
 }
+
 function changeWidth(value) {
     fs.WidthChange(value);
 }
@@ -52,7 +58,34 @@ function changeWidth(value) {
 export const Drawing = ({ children }) => {
     //This is going to be disgusting, yay
 
+
+
+    //grabbing the image to load if there is one
+    var cId = getURLParameter('cId');
+    var width;
+    var length;
+
+    function getURLParameter(param) {
+        var pageURL = window.location.search.substring(1);
+        var URLVariables = pageURL.split('&');
+        for (var i = 0; i < URLVariables.length; i++) {
+            var parameterName = URLVariables[i].split('=');
+            if (parameterName[0] === param) {
+                if (decodeURIComponent(parameterName[1]) == null) {
+                    return parameterName[1]
+                } else {
+                    return decodeURIComponent(parameterName[1].replace(/\+/g, " "));
+                }
+            }
+        }
+        return false;
+    }
+
     const handleClick = () => {
+        if(cId){
+            const fs = require('../js/canvas.js');
+            fs.SetImage(cId);
+        }
         forceLoad();
     }
 
@@ -106,10 +139,12 @@ export const Drawing = ({ children }) => {
         setAnchorE2(null);
     }
 
+
+
     return (
 
-        <section style={sectionStyle}>
-
+        <section style={sectionStyle} >
+            <img src={pic1} style={{display: 'none'}} id="pic1"/>
             <script type="text/javascript" src="../js/canvas.js"></script>
 
             <Grid container>
