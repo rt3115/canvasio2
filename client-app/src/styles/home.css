@@ -1,3 +1,20 @@
-﻿.homeButton{
+﻿
 
+.cluster {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%)
+}
+
+.root {
+
+}
+
+#home-section {
+    background: url('../refs/background.jpg');
+    height: 1000px;
+    width: 100%;
+    background-size: cover;
 }
