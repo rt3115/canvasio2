@@ -17,10 +17,12 @@ Made with: JavaScript, React, C#, CSS, and HTML.
 1. Unzip folder
 2. Open command prompt 
 3. CD client app directory inside canvas.io master directories
-4. npm install (Note: if npm is already installed you can skip this)
-4. b - If Npm is not installed, please install Node Js
+4. npm install (If Npm is not installed, please install Node Js)
 5. npm run build
 6. npm start
+
+## How to install Node js
+1. Navigate to this webpage and install the correct version for your system - https://nodejs.org/en/download/
 
 ## How to use
 
