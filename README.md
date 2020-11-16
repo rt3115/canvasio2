@@ -11,7 +11,7 @@ Made with: JavaScript, React, C#, CSS, and HTML.
 
 ## Recomended to run
 1. Open up a chromium based browser (Chrome, 2020 Edge) or FireFox 
-2. Enter in the URL this Ip Address 24.59.152.39:3000 
+2. Enter into URL searchbar this Ip Address 24.59.152.39:3000 
 
 ## How to run locally
 1. Unzip folder
